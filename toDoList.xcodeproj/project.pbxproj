@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4D01B44E2521823800C79C15 /* toDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B44D2521823800C79C15 /* toDoListApp.swift */; };
-		4D01B4502521823800C79C15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B44F2521823800C79C15 /* ContentView.swift */; };
+		4D01B4502521823800C79C15 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B44F2521823800C79C15 /* TaskListView.swift */; };
 		4D01B4522521823900C79C15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D01B4512521823900C79C15 /* Assets.xcassets */; };
 		4D01B4552521823900C79C15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D01B4542521823900C79C15 /* Preview Assets.xcassets */; };
 		4D01B4602521823900C79C15 /* toDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B45F2521823900C79C15 /* toDoListTests.swift */; };
 		4D01B46B2521823900C79C15 /* toDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B46A2521823900C79C15 /* toDoListUITests.swift */; };
+		4D01B47D2521826300C79C15 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B47C2521826300C79C15 /* Task.swift */; };
+		4D01B48B25218C7700C79C15 /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B48A25218C7700C79C15 /* TaskCellViewModel.swift */; };
+		4D01B493252190D400C79C15 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01B492252190D400C79C15 /* TaskListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +38,7 @@
 /* Begin PBXFileReference section */
 		4D01B44A2521823800C79C15 /* toDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01B44D2521823800C79C15 /* toDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListApp.swift; sourceTree = "<group>"; };
-		4D01B44F2521823800C79C15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4D01B44F2521823800C79C15 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		4D01B4512521823900C79C15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D01B4542521823900C79C15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D01B4562521823900C79C15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +48,9 @@
 		4D01B4662521823900C79C15 /* toDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D01B46A2521823900C79C15 /* toDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoListUITests.swift; sourceTree = "<group>"; };
 		4D01B46C2521823900C79C15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D01B47C2521826300C79C15 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4D01B48A25218C7700C79C15 /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
+		4D01B492252190D400C79C15 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +101,10 @@
 		4D01B44C2521823800C79C15 /* toDoList */ = {
 			isa = PBXGroup;
 			children = (
-				4D01B44D2521823800C79C15 /* toDoListApp.swift */,
-				4D01B44F2521823800C79C15 /* ContentView.swift */,
+				4D01B48925218C5200C79C15 /* VIewModels */,
+				4D01B485252186D500C79C15 /* View */,
+				4D01B484252186C600C79C15 /* App */,
+				4D01B47B2521825200C79C15 /* Model */,
 				4D01B4512521823900C79C15 /* Assets.xcassets */,
 				4D01B4562521823900C79C15 /* Info.plist */,
 				4D01B4532521823900C79C15 /* Preview Content */,
@@ -128,6 +136,39 @@
 				4D01B46C2521823900C79C15 /* Info.plist */,
 			);
 			path = toDoListUITests;
+			sourceTree = "<group>";
+		};
+		4D01B47B2521825200C79C15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D01B47C2521826300C79C15 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D01B484252186C600C79C15 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4D01B44D2521823800C79C15 /* toDoListApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4D01B485252186D500C79C15 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D01B44F2521823800C79C15 /* TaskListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D01B48925218C5200C79C15 /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D01B48A25218C7700C79C15 /* TaskCellViewModel.swift */,
+				4D01B492252190D400C79C15 /* TaskListViewModel.swift */,
+			);
+			path = VIewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +300,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D01B4502521823800C79C15 /* ContentView.swift in Sources */,
+				4D01B4502521823800C79C15 /* TaskListView.swift in Sources */,
+				4D01B48B25218C7700C79C15 /* TaskCellViewModel.swift in Sources */,
+				4D01B493252190D400C79C15 /* TaskListViewModel.swift in Sources */,
+				4D01B47D2521826300C79C15 /* Task.swift in Sources */,
 				4D01B44E2521823800C79C15 /* toDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
